@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cryptage/Décryptage de mot de passe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 5px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cryptage/D&eacute;cryptage de mot de passe</h1>
+    <label for="clair">Mot de passe en clair :</label>
+    <input type="text" id="clair">
+    <br>
+    <label for="crypte">Mot de passe crypt&eacute; :</label>
+    <input type="text" id="crypte">
+    <br>
+    <button onclick="crypterMotDePasse()">Crypter</button>
+    <button onclick="decrypterMotDePasse()">D&eacute;crypter</button>
+
+    <script>
+        // Fonction pour crypter un mot de passe
+        function crypterMotDePasse() {
+            var motDePasse = document.getElementById("clair").value;
+            var motDePasseCrypte = btoa(motDePasse);
+            document.getElementById("crypte").value = motDePasseCrypte;
+        }
+
+        // Fonction pour décrypter un mot de passe
+        function decrypterMotDePasse() {
+            var motDePasseCrypte = document.getElementById("crypte").value;
+            var motDePasse = atob(motDePasseCrypte);
+            document.getElementById("clair").value = motDePasse;
+        }
+    </script>
+
+    <p>Version : 1.0 - par Pascal Chatonnay  <br />
+        Date de derni&egrave;re modification : 17/05/2024</p> 
+    <p>Contact : <a href="mailto:rssi@univ-fcomte.fr">rssi@univ-fcomte.fr<EMAIL></a></p>  
+</body>
+</html>
