@@ -3,19 +3,12 @@
 <head>
     <title>Cryptage/Décryptage de mot de passe</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            padding: 20px;
+        .container {
+            display: flex;
+            justify-content: space-between;
         }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+        .form-container, .doc-container {
+            width: 50%;
         }
         input[type="text"] {
             padding: 5px;
@@ -38,15 +31,22 @@
 </head>
 <body>
     <h1>Cryptage/D&eacute;cryptage de mot de passe</h1>
-    <label for="clair">Mot de passe en clair :</label>
-    <input type="text" id="clair">
-    <br>
-    <label for="crypte">Mot de passe crypt&eacute; :</label>
-    <input type="text" id="crypte">
-    <br>
-    <button onclick="crypterMotDePasse()">Crypter</button>
-    <button onclick="decrypterMotDePasse()">D&eacute;crypter</button>
 
+    <div class="container">
+        <div class="form-container">
+            <label for="clair">Mot de passe en clair :</label>
+            <input type="text" id="clair">
+            <br>
+            <label for="crypte">Mot de passe crypt&eacute; :</label>
+            <input type="text" id="crypte">
+            <br>
+            <button onclick="crypterMotDePasse()">Crypter</button>
+            <button onclick="decrypterMotDePasse()">D&eacute;crypter</button>
+        </div>
+    <div class="doc-container">
+        <p>Indiquez votre mot de passe en clair dans la première cellule. Cliquez sur "Crypter". Le mot de passe faiblement crypté apparaîtra dans la seconde cellule. Pour décrypter, indiquez le mot de passe faiblement crypté dans la seconde cellule. Cliquez sur "Décrypter".</p>
+    </div>
+    </div>
     <script>
         // Fonction pour crypter un mot de passe
         function crypterMotDePasse() {
